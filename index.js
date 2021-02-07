@@ -21,5 +21,5 @@ app.get('/api/animalshow/:id', (req, res) => {
     res.send(animals);
 })
 
-const port = process.env.port || 5500;
+const port = process.env.port || 3000;
 app.listen(port, function() {console.log(`Listening to port ${port}`)});
