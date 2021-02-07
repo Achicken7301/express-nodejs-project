@@ -2,6 +2,8 @@ const express = require('express');
 const app = express();
 const html = require(./index.html);
 
+const fs = require('fs');
+
 const animals = [
     {id: 1, name: "dog"},
     {id: 2, name: "cat"},
@@ -9,7 +11,11 @@ const animals = [
 ]
 
 app.get('/', function(req, res){
-    res.send('this is root of the website!!');
+    fs.readFile('index.html', function(err, data){
+        res.writeHead(200, {'Content-Type': 'text/html'});
+        res.write(data);
+        return res.end();
+    })
 });
 
 app.get('/api/animals', function(req, res){
@@ -22,5 +28,5 @@ app.get('/api/animals/:id', (req, res) => {
     res.send(animals);
 })
 
-const port = process.env.port || 3000;
+const port = process.env.port || 5500;
 app.listen(port, function() {console.log(`Listening to port ${port}`)});
