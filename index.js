@@ -15,7 +15,7 @@ app.get('/api/animals', function(req, res){
     res.send(animals);
 });
 
-app.get('/api/animalshow/:id', (req, res) => {
+app.get('/api/animals/:id', (req, res) => {
     const animal = animals.find(c => c.id === parseInt(res.params.id));
     if(!animal) res.status(404).send('Object not found.');
     res.send(animals);
