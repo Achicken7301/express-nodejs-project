@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const html = require(./index.html);
 
 const animals = [
     {id: 1, name: "dog"},
