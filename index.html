@@ -9,14 +9,14 @@
 <body>
         <button id='red' onclick="red()">Change to red</button>
         <button id='blue' onclick="blue()">Change to blue</button>
-        <p>This is text will change color</p>
+        <p id='color-change'>This is text will change color</p>
     <script>
         function red() {
-            document.getElementById('red').style.color = 'red';
+            document.getElementById('color-change').style.color = 'red';
         }
 
         function blue() {
-            document.getElementById('blue').style.color = 'blue';
+            document.getElementById('color-change').style.color = 'blue';
         }
         
     </script>
