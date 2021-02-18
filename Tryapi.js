@@ -11,12 +11,13 @@ app.get('/',function(req,res){
     return res.end();
 })
 })
+app.get('/action_page.php',function(req,res){ 
+    res.write(data);
+    return res.end();
+
+})
 app.get('/Api.js',function(req,res){ 
   fs.readFile('Api.js', function(err, data) {
-    fs.readFile('Tryapi.html', function(err, data) {
-
-  })
-    res.writeHead(200, {'Content-type': 'text/html'});
     res.write(data);
     return res.end();
 })

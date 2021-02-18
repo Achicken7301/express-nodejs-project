@@ -10,12 +10,17 @@
         }
     </style>
 </head>
-<script src ="Api.js"></script>
+
 <body>
 <h1>Try api with me </h1>
-<label><input type ='text' id = 'try' placeholder = "what do you want to see"><label>
-<button type="submit" onclick src ='Api.js'>Submit</button>
+<form>
+<label>Do you want to relax<label>
+<input type ='text' id = "test" onchange = "run()" placeholder = "what do you want to see">
+<input type="reset"  onclick ="run()" value ='Random'>
+
+</form>
 <p><img id = "image" /></p>
+<script src ="Api.js"></script>
 </body>
 
 </html>
