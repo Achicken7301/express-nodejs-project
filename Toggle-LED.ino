@@ -14,6 +14,13 @@ void handleRoot();              // function prototypes for HTTP handlers
 void handleLED();
 void handleNotFound();
 
+//Raw string literal https://www.youtube.com/watch?v=cWZP7Y8qP6E&t=0s
+char webpage[] = R"=====(
+  <form action="/LED" method="POST">
+    <input type="submit" value="Toggle LED">
+  </form>
+)=====";
+
 void setup(void){
   Serial.begin(115200);         // Start the Serial communication to send messages to the computer
   delay(10);
@@ -56,7 +63,7 @@ void loop(void){
 }
 
 void handleRoot() {                         // When URI / is requested, send a web page with a button to toggle the LED
-  server.send(200, "text/html", "<form action=\"/LED\" method=\"POST\"><input type=\"submit\" value=\"Toggle LED\"></form>");
+  server.send(200, webpage);
 }
 
 void handleLED() {                          // If a POST request is made to URI /LED
