@@ -18,8 +18,8 @@
 #include <ESP8266WiFi.h>        // Include the Wi-Fi library
 #include <ESP8266mDNS.h>        // Include the mDNS library
 
-const char* ssid = "NHA";
-const char* password = "0984012265";
+const char* ssid = "";
+const char* password = "";
 
 WiFiServer server(80);
 
