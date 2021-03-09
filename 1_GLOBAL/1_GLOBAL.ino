@@ -1,15 +1,17 @@
+#include <Arduino.h>
+
 #include <ESP8266WiFi.h>
-#include <WiFiClient.h>
-#include <ESP8266WebServer.h>
+#include <ESP8266WiFiMulti.h>
 
-#ifndef STASSID
-#define STASSID ""
-#define STAPSK  ""
-#endif
+#include <ArduinoJson.h>
 
-const char* ssid = STASSID;
-const char* password = STAPSK;
+#include <WebSocketsClient.h>
+#include <SocketIOclient.h>
 
-ESP8266WebServer server(80);
+#include <Hash.h>
 
-const int led = 2;
+ESP8266WiFiMulti WiFiMulti;
+SocketIOclient socketIO;
+
+#define USE_SERIAL Serial
+unsigned long messageTimestamp = 0;
