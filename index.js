@@ -1,30 +1,29 @@
 const app = require('express')();
 const http = require('http');
-//const io = require('socket.io')(http);
 const server = http.createServer(app)
-
 const WebSocket = require('ws');
 
-socket = new WebSocket.Server({server});
+socket = new WebSocket.Server({ server });
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/index.html');
 });
 
-socket.on('connection', function (ws,req) {
-  
+socket.on('connection', function (ws, req) {
+  const ip = req.socket.remoteAddress
+  //in ra dia chi ip cua client ket noi toi
+  console.log("New client connected" + ip);
 
-    const ip = req.socket.remoteAddress
-    console.log("New client connected"+ip)
-
-  console.log('started client interval');
+  //
   ws.on('message', function (msg) {
-    console.log("message: "+msg);
-    });
-  ws.on('close', function () {
-    console.log('stopping client interval');
+    console.log("Client sent a message: " + msg);
 
+    //tin nhan nay gui duoi dang object
+    ws.send('tin nhan nay gui toi web client!');
   });
+
+  ws.on('close', ()=>{console.log("A Client has disconnected from Server")});
 });
-server.listen(3484, () => {
-  console.log('listening on *:3484');
+
+server.listen(3000, () => {
+  console.log('listening on *:3000');
 });
