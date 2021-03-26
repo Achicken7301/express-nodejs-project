@@ -41,7 +41,8 @@ function doGet(e) {
     }
     // Return result of operation
     return ContentService.createTextOutput(result);
-  }
-  function stripQuotes( value ) {
-    return value.replace(/^["']|['"]$/g, "");
-  }
+}
+
+function stripQuotes( value ) {
+  return value.replace(/^["']|['"]$/g, "");
+}

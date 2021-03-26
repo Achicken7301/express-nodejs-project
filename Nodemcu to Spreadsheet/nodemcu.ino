@@ -7,6 +7,7 @@ const char* password = "Password";
 
 const char* host = "script.google.com";
 const int httpsPort = 443;
+
 /*
 AKfycbzBgMbEFAFvSGjHhjoY-WTutFOV06kx2aVNiX56BdEMtJLpi0RzWfHfm4bDllaxfYB-Qw
 https://script.google.com/macros/s/AKfycbzBgMbEFAFvSGjHhjoY-WTutFOV06kx2aVNiX56BdEMtJLpi0RzWfHfm4bDllaxfYB-Qw/exec?value1=20&value2=30&value3=550
@@ -16,7 +17,7 @@ WiFiClientSecure client;
 
 
 const char* fingerprint = "46 B2 C3 44 9C 59 09 8B 01 B6 F8 BD 4C FB 00 74 91 2F EF F6";
-String GAS_ID = "Put your GAS ID here";  // Replace by your GAS service id
+String GAS_ID = "1V8IrFzVKb2IbDPLHfi5rsul3g-65jf3J-2kthBCuOw4";  // Replace by your GAS service id
 
 
 void setup()
